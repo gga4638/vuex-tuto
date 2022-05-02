@@ -17,7 +17,8 @@ export const mutations = {
 export const getters = {
   getCount(state) {
     return state.count
-  }
+  },
+  getEvenOrOdd: state => state.count % 2 === 0 ? 'even' : 'odd'
 }
 
 export const actions = {
@@ -28,5 +29,10 @@ export const actions = {
   },
   incrementAsync2({commit}) {
     commit('increment')
+  },
+  incrementIfOdd({ state, commit }) {
+    if(state.count % 2 === 1) {
+      commit("increment")
+    }
   }
 }
