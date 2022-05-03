@@ -8,6 +8,9 @@ const getters = {
   },
   sumWithRootCount(state, getters, rootState) {
     return state.count + rootState.count
+  },
+  getCount(state) {
+    return state.count
   }
 }
 
@@ -19,8 +22,10 @@ const mutations = {
 
 const actions = {
   incrementIfOddOnRootSum({ state, commit, rootState }) {
+    // console.log("moduleA: ", state.count)
+    // console.log("moduleB; ", rootState.modules.moduleB.count)
     if((state.count + rootState.modules.moduleB.count) % 2 === 1) {
-      commit('count/increment', null, {root: true} )
+      commit('modules/moduleB/increment', null, {root: true} )
     }
   }
 }

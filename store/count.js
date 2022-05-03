@@ -18,7 +18,6 @@ export const getters = {
   getCount(state) {
     return state.count
   },
-  getEvenOrOdd: state => state.count % 2 === 0 ? 'even' : 'odd'
 }
 
 export const actions = {

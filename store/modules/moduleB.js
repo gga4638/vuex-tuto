@@ -5,7 +5,12 @@ const state = () => ({
 const getters = {
   doubleCount(state) {
     return state.count * 2
-  }
+  },
+  getCount(state) {
+    return state.count;
+  },
+  getEvenOrOdd: state => state.count % 2 === 0 ? 'even' : 'odd'
+
 }
 
 const mutations = {

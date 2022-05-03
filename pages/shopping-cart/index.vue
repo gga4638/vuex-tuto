@@ -1,0 +1,13 @@
+<template>
+  <div>
+    <h1>쇼핑카트</h1>
+    <hr/>
+    <h2>상품</h2>
+    <ProductList/>
+    <hr/>
+    <h2>장바구니</h2>
+    <ShoppingCart/>
+  </div>
+</template>
+<script>
+</script>
