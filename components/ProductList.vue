@@ -5,7 +5,7 @@
         v-for="product in products"
         :key="product.id"
       >
-        {{ product.title }} - {{ product.price }}, 남은 수량: {{ product.inventory }}
+        {{ product.title }} - {{ product.price | currency }}, 남은 수량: {{ product.inventory }}
         <br/>
         <button
         :disabled="!product.inventory"

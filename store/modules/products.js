@@ -5,7 +5,9 @@ const state = () => ({
 })
 
 const getters = {
-
+  getProductInventoryById: (state) => (id) => {
+    return state.all.find(product => product.id === id).inventory
+  },
 }
 
 const actions = {
@@ -13,7 +15,6 @@ const actions = {
     shop.getProducts(products => {
       commit('setProducts', products)
     })
-
   }
 }
 
@@ -24,7 +25,11 @@ const mutations = {
   decrementProductInventory(state, { id }) {
     const product = state.all.find(product => product.id === id)
     product.inventory--
-  }
+  },
+  incrementProductInventory(state, { id }) {
+    const product = state.all.find(product => product.id === id)
+    product.inventory++
+  },
 }
 
 export default {

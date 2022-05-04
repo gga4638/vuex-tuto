@@ -27,6 +27,7 @@ const getters = {
 }
 
 const actions = {
+  // 장바구니 담기
   addProductToCart: ({ state, commit }, product) => {
     commit('setCheckoutStatus', null)
     if(product.inventory > 0) {
@@ -40,6 +41,29 @@ const actions = {
       commit('modules/products/decrementProductInventory', { id: product.id }, { root: true })
     }
   },
+  // 장바구니 수량변경 -1
+  subtractProductInCart: ({ state, commit }, product) => {
+    const cartItem = state.items.find(item => item.id === product.id)
+    commit('decrementItemQuantity', cartItem)
+    commit('modules/products/incrementProductInventory', { id: product.id }, { root: true })
+
+    if(cartItem.quantity === 0) {
+      const cartItem = state.items.filter(item => item.id !== product.id)
+      commit('setCartItems', { items: cartItem })
+    }
+  },
+  // 장바구니 수량변경 +1
+  plusProductInCart: ({ state, commit }, product) => {
+    const cartItem = state.items.find(item => item.id === product.id)
+    commit('incrementItemQuantity', cartItem)
+    commit('modules/products/decrementProductInventory', { id: product.id }, { root: true })
+
+    if(cartItem.quantity === 0) {
+      const cartItem = state.items.filter(item => item.id !== product.id)
+      commit('setCartItems', { items: cartItem })
+    }
+  },
+  // 결제
   checkout: ({ state, commit }, products) => {
     const savedCartItems = [...state.items]
     commit('setCheckoutStatus', null)
@@ -55,15 +79,6 @@ const actions = {
       }
     )
   },
-  removeProductFromCart: ({ state, commit }, product) => {
-    const sameProducts = state.items.find(item => item.id === product.id)
-    console.log(sameProducts)
-    sameProducts.quantity--
-
-    // commit('undoCartToProduct', product)
-    // shop에서 남은 수량 원상복귀해줘야함함
-  }
-
 }
 
 const mutations = {
@@ -83,9 +98,10 @@ const mutations = {
     const cartItem = state.items.find(item => item.id === id)
     cartItem.quantity++
   },
-  undoCartToProduct() {
-
-  }
+  decrementItemQuantity(state, {id}) {
+    const cartItem = state.items.find(item => item.id === id)
+    cartItem.quantity--
+  },
 }
 
 export default {
