@@ -1,32 +1,39 @@
-import {SOME_MUTATION} from "~/store/mutation-types";
+const STORAGE_KEY = 'todos-vuejs'
 
-export const state = () => ({
-  todos: [
-    { id: 1, text: 'vuex', done: true },
-    { id: 2, text: 'getter', done: false },
-    { id: 3, text: 'count', done: false },
-    { id: 4, text: 'fun', done: true },
-
-  ]
+const state  = () => ({
+  todos: JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]')
 })
 
-export const getters = {
-  doneTodos(state) {
-    return state.todos.filter(todo => todo.done)
-  },
-  doneTodosCount(state, getters) {
-    return getters.doneTodos.length
-  },
-  getTodoById(state) {
-    return (id) => {
-      return state.todos.find(todo => todo.id === id)
-    }
-  }
+const getters = {
 
 }
 
-export const mutations = {
-  [SOME_MUTATION] (state) {
-
+const actions = {
+  addTodo({commit}, text) {
+    commit('addTodo', {
+      text,
+      done: false,
+    })
   }
+}
+
+const mutations = {
+  addTodo(state, todo) {
+    state.todos.push(todo)
+  }
+}
+
+const plugins = {
+
+}
+
+
+export default {
+  namespaced: true,
+  state,
+  getters,
+  actions,
+  mutations,
+  plugins,
+  STORAGE_KEY,
 }

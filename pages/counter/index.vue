@@ -60,7 +60,7 @@ export default {
   computed: {
     ...mapGetters({
       count: 'count/getCount',
-      doneTodos: "todo/doneTodos",
+      doneTodos: "modules/todo/doneTodos",
       message: "form/getMessage",
       evenOrOdd: "modules/moduleB/getEvenOrOdd",
       countB: 'modules/moduleB/getCount',
@@ -75,7 +75,7 @@ export default {
       return this.countState.count + this.localCount
     },
     doneTodosCount() {
-      return this.$store.getters["todo/doneTodosCount"]
+      return this.$store.getters["modules/todo/doneTodosCount"]
     },
     getText() {
       return this.formState.obj.message
@@ -131,7 +131,7 @@ export default {
     },
     /* todos */
     getTodoById(id) {
-      return this.$store.getters["todo/getTodoById"](id)
+      return this.$store.getters["modules/todo/getTodoById"](id)
     },
   }
 }

@@ -1,0 +1,245 @@
+@import '../variables';
+
+/**************/
+/* Typography */
+/**************/
+
+// Display &Heading ////////////////////////////////
+
+// display
+.display-1,
+.display-2,
+.display-3,
+.display-4,
+.display-5,
+.display-6 {
+  color: #000000;
+  font-family: $--font-family-heading;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.075em;
+}
+
+.display-1 {
+  font-size: 4.25rem;
+}
+.display-2 {
+  font-size: 4rem;
+}
+.display-3 {
+  font-size: 3.75rem;
+}
+.display-4 {
+  font-size: 3.5rem;
+}
+.display-5 {
+  font-size: 3.25rem;
+}
+.display-6 {
+  font-size: 2.942rem;
+}
+
+// heading
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  color: #000000;
+  font-family: $--font-family-heading;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.075em;
+}
+
+h1,
+.h1 {
+  font-size: 2.177rem;
+  margin-bottom: 2.4rem;
+}
+h2,
+.h2 {
+  font-size: 1.53rem;
+  margin-bottom: 1.6rem;
+}
+h3,
+.h3 {
+  font-size: 1.295rem;
+  margin-bottom: 1.5rem;
+}
+h4,
+.h4 {
+  font-size: 1.177rem;
+  margin-bottom: 1.2rem;
+}
+h5,
+.h5 {
+  font-size: 1.059rem;
+  margin-bottom: 1rem;
+}
+h6,
+.h6 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+// Size ////////////////////////////////
+
+// font-size
+.fs-1 {
+  @extend .ls-sm;
+  font-size: $--font-size-extra-large !important;
+}
+.fs-2 {
+  @extend .ls-sm;
+  font-size: $--font-size-large !important;
+}
+.fs-3 {
+  @extend .ls-sm;
+  font-size: $--font-size-medium !important;
+}
+.fs-4 {
+  @extend .ls-sm;
+  font-size: $--font-size-base !important;
+}
+.fs-5 {
+  @extend .ls-sm;
+  font-size: $--font-size-small !important;
+}
+.fs-6 {
+  @extend .ls-sm;
+  font-size: $--font-size-extra-small !important;
+}
+.fs-inherit {
+  @extend .ls-inherit;
+  font-size: inherit !important;
+}
+
+// line-height
+.lh-1 {
+  line-height: 1 !important;
+}
+.lh-sm {
+  line-height: $--font-line-height-secondary !important;
+}
+.lh-base {
+  line-height: $--font-line-height-primary !important;
+}
+.lh-lg {
+  line-height: calc(#{$--font-line-height-secondary} * 2) !important;
+}
+.lh-inherit {
+  line-height: inherit !important;
+}
+
+// letter-spacing
+.ls-sm {
+  letter-spacing: -0.05em !important;
+}
+.ls-0 {
+  letter-spacing: 0 !important;
+}
+.ls-lg {
+  letter-spacing: 0.05em !important;
+}
+.ls-inherit {
+  letter-spacing: inherit !important;
+}
+
+// Alignment ////////////////////////////////
+
+// alignment
+.text-start {
+  text-align: left !important;
+}
+.text-center {
+  text-align: center !important;
+}
+.text-end {
+  text-align: right !important;
+}
+
+// Style ////////////////////////////////
+.ff-noto {
+  font-family: $--font-family !important;
+}
+.ff-scdream {
+  font-family: $--font-family-heading !important;
+}
+
+// font-weight
+.fw-bolder {
+  font-weight: calc(#{$--font-weight-primary} + 300) !important;
+}
+.fw-bold {
+  font-weight: calc(#{$--font-weight-primary} + 100) !important;
+}
+.fw-normal {
+  font-weight: $--font-weight-primary !important;
+}
+.fw-light {
+  font-weight: $--font-weight-secondary !important;
+}
+.fw-lighter {
+  font-weight: calc(#{$--font-weight-secondary} - 100) !important;
+}
+
+// style
+mark,
+.mark {
+  background-color: $--color-warning-light !important;
+}
+.del {
+  text-decoration: line-through !important;
+}
+.ins {
+  text-decoration: underline !important;
+}
+strong,
+.strong {
+  font-weight: 600 !important;
+}
+.em {
+  font-style: italic !important;
+}
+.normal {
+  font-style: normal !important;
+}
+
+// text wrapping and overflow
+.text-wrap {
+  white-space: normal !important;
+}
+.text-nowrap {
+  white-space: nowrap !important;
+}
+.text-ellipsis {
+  white-space: nowrap !important;
+  text-overflow: ellipsis !important;
+  overflow-x: hidden;
+}
+
+// word break
+.text-break {
+  word-wrap: break-word !important;
+  word-break: break-word !important;
+}
+
+// text transform
+.text-lowercase {
+  text-transform: lowercase !important;
+}
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+.text-capitalize {
+  text-transform: capitalize !important;
+}

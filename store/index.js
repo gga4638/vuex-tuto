@@ -6,6 +6,7 @@ import moduleB from './modules/moduleB'
 import cart from './modules/cart'
 import products from './modules/products'
 import {currency} from "@/plugins/currency";
+import todo from "./modules/todo";
 
 Vue.filter('currency', currency)
 
@@ -17,5 +18,6 @@ export const store = new Vuex.Store({
     moduleB,
     cart,
     products,
+    todo,
   },
 })

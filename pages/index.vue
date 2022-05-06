@@ -8,6 +8,9 @@
       <li>
         <NuxtLink to="/shopping-cart">Shopping Cart</NuxtLink>
       </li>
+      <li>
+        <NuxtLink to="/todomvc">TodoMVC</NuxtLink>
+      </li>
     </ul>
   </div>
 </template>

@@ -1,0 +1,211 @@
+// custom
+$--font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Liberation Sans', sans-serif,
+'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' !default;
+$--font-family-heading: 's-core-dream', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Liberation Sans', sans-serif,
+'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' !default;
+
+input,
+select,
+textarea,
+button {
+  font-family: $--font-family !important;
+}
+
+/* Border
+-------------------------- */
+$--border-radius-large: 10px !default;
+$--border-radius-base: 4px !default;
+$--border-radius-small: 2px !default;
+$--border-radius-zero: 0px !default;
+$--border-radius-circle: 50% !default;
+
+// Box-shadow
+$--box-shadow-light: 10px 5px 50px rgba(0, 0, 0, 0.075) !default;
+$--box-shadow-base: 10px 5px 50px rgba(0, 0, 0, 0.15) !default;
+$--box-shadow-dark: 10px 5px 50px rgba(0, 0, 0, 0.3) !default;
+
+/* Color
+-------------------------- */
+$--color-white: #ffffff !default;
+$--color-light: #f4f4f4 !default;
+$--color-dark: #666666 !default;
+$--color-black: #1b1b1b !default;
+$--color-primary: #1678ff !default;
+$--color-primary-light-1: mix($--color-white, $--color-primary, 10%) !default;
+$--color-primary-light-2: mix($--color-white, $--color-primary, 20%) !default;
+$--color-primary-light-3: mix($--color-white, $--color-primary, 30%) !default;
+$--color-primary-light-4: #74a6eb !default;
+$--color-primary-light-5: mix($--color-white, $--color-primary, 50%) !default;
+$--color-primary-light-6: mix($--color-white, $--color-primary, 60%) !default;
+$--color-primary-light-7: mix($--color-white, $--color-primary, 70%) !default;
+$--color-primary-light-8: mix($--color-white, $--color-primary, 80%) !default;
+$--color-primary-light-9: #eff6fe !default;
+$--color-success: #52c8ba !default;
+$--color-success-light: mix($--color-white, $--color-success, 80%) !default;
+$--color-success-lighter: mix($--color-white, $--color-success, 90%) !default;
+$--color-warning: #bda2e5 !default;
+$--color-warning-light: mix($--color-white, $--color-warning, 80%) !default;
+$--color-warning-lighter: mix($--color-white, $--color-warning, 90%) !default;
+$--color-danger: #fe0000 !default;
+$--color-danger-light: mix($--color-white, $--color-danger, 80%) !default;
+$--color-danger-lighter: mix($--color-white, $--color-danger, 90%) !default;
+$--color-info: #1e2b58 !default;
+$--color-info-light: mix($--color-white, $--color-info, 80%) !default;
+$--color-info-lighter: mix($--color-white, $--color-info, 90%) !default;
+
+$--color-text-primary: #000000 !default;
+$--color-text-regular: #000000 !default;
+$--color-text-secondary: #000000 !default;
+$--color-text-placeholder: #bcbcbc !default;
+
+$--border-color-base: #d3d3d3 !default;
+$--border-color-light: #e5e5e5 !default;
+$--border-color-lighter: #efefef !default;
+$--border-color-extra-light: #f2f6fc !default;
+
+$--background-color-base: $--color-light !default;
+
+/* Typography
+-------------------------- */
+$--font-size-extra-large: 22px !default;
+$--font-size-large: 20px !default;
+$--font-size-medium: 18px !default;
+$--font-size-base: 17px !default;
+$--font-size-small: 15px !default;
+$--font-size-extra-small: 14px !default;
+
+$--font-weight-primary: 400 !default;
+$--font-weight-secondary: 300 !default;
+
+$--font-line-height-primary: 24px !default;
+$--font-line-height-secondary: 17px !default;
+
+$--font-color-disabled-base: #bbb !default;
+
+/* Disable base
+-------------------------- */
+$--disabled-border-base: #cfcfcf !default;
+
+/* Checkbox
+-------------------------- */
+$--checkbox-font-size: $--font-size-base !default;
+
+/* Alert
+-------------------------- */
+$--alert-padding: calc(#{$--font-size-base} * 2) calc(#{$--font-size-base} * 3) !default;
+$--alert-border-radius: $--border-radius-large !default;
+$--alert-title-font-size: $--font-size-large !default;
+$--alert-description-font-size: $--font-size-base !default;
+$--alert-close-font-size: $--font-size-base !default;
+$--alert-close-customed-font-size: $--font-size-base !default;
+
+$--alert-success-color: $--color-success-lighter !default;
+$--alert-info-color: $--color-info-lighter !default;
+$--alert-warning-color: $--color-warning-lighter !default;
+$--alert-danger-color: $--color-danger-lighter !default;
+
+$--alert-icon-size: $--font-size-base !default;
+$--alert-icon-large-size: calc(#{$--font-size-base} * 1.75) !default;
+
+/* Input
+-------------------------- */
+$--input-font-size: $--font-size-base !default;
+$--input-width: 140px !default;
+$--input-height: 45px !default;
+$--input-max-width: 314px !default;
+$--input-border-radius: $--border-radius-base !default;
+
+$--input-medium-font-size: $--font-size-base !default;
+$--input-medium-height: 40px !default;
+$--input-small-font-size: $--font-size-small !default;
+$--input-small-height: 30px !default;
+$--input-mini-font-size: $--font-size-extra-small !default;
+$--input-mini-height: 24px !default;
+
+/* Button
+-------------------------- */
+$--button-large-font-size: $--font-size-medium !default;
+$--button-large-border-radius: $--border-radius-base !default;
+$--button-large-padding-vertical: 20px !default;
+$--button-large-padding-horizontal: 30px !default;
+
+$--button-font-size: $--font-size-base !default;
+$--button-font-weight: $--font-weight-primary !default;
+$--button-border-radius: $--border-radius-base !default;
+$--button-padding-vertical: 13px !default;
+$--button-padding-horizontal: 20px !default;
+
+$--button-medium-font-size: $--font-size-small !default;
+$--button-medium-border-radius: $--border-radius-base !default;
+$--button-medium-padding-vertical: 11.5px !default;
+$--button-medium-padding-horizontal: 15px !default;
+
+$--button-small-font-size: $--font-size-small !default;
+$--button-small-border-radius: #{$--border-radius-base - 1} !default;
+$--button-small-padding-vertical: 6.5px !default;
+$--button-small-padding-horizontal: 10px !default;
+
+$--button-mini-font-size: $--font-size-small !default;
+$--button-mini-border-radius: #{$--border-radius-base - 1} !default;
+$--button-mini-padding-vertical: 3.5px !default;
+$--button-mini-padding-horizontal: 8px !default;
+
+/* Dialog
+-------------------------- */
+$--dialog-background-color: $--color-white !default;
+$--dialog-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !default;
+$--dialog-title-font-size: $--font-size-large !default;
+$--dialog-content-font-size: $--font-size-base !default;
+$--dialog-font-line-height: $--font-line-height-primary !default;
+$--dialog-padding-primary: 20px !default;
+
+/* Table
+-------------------------- */
+$--table-border-color: $--border-color-light !default;
+$--table-font-color: $--color-text-regular !default;
+$--table-header-font-color: $--color-text-secondary !default;
+$--table-row-hover-background-color: $--background-color-base !default;
+$--table-current-row-background-color: $--color-primary-light-9 !default;
+$--table-header-background-color: $--background-color-base !default;
+$--table-fixed-box-shadow: 0 0 10px rgba(0, 0, 0, 0.12) !default;
+
+/* Popup
+-------------------------- */
+$--popup-modal-background-color: $--color-black !default;
+$--popup-modal-opacity: 0.8 !default;
+
+/* Popover
+-------------------------- */
+$--popover-arrow-size: 10px !default;
+$--popover-padding: 20px !default;
+$--popover-title-font-size: $--font-size-base !default;
+
+/* Badge
+-------------------------- */
+$--badge-background-color: $--color-danger !default;
+$--badge-radius: 10px !default;
+$--badge-font-size: 12px !default;
+$--badge-padding: 6px !default;
+$--badge-size: 18px !default;
+
+/* Menu
+--------------------------*/
+$--menu-item-font-size: $--font-size-small !default;
+$--menu-item-hover-fill: $--color-primary-light-9 !default;
+
+/* Collapse
+--------------------------*/
+$--collapse-border-color: $--border-color-base !default;
+$--collapse-header-height: calc(#{$--font-size-base} * 3) !default;
+$--collapse-header-font-size: $--font-size-base !default;
+$--collapse-content-font-size: $--font-size-base !default;
+
+/* Link
+--------------------------*/
+$--link-font-weight: 400 !default;
+
+/* Descriptions
+-------------------------- */
+$--descriptions-header-margin-bottom: 25px !default;
+$--descriptions-table-border: 1px solid $--border-color-light !default;
+$--descriptions-item-bordered-label-background: $--background-color-base !default;

@@ -1,0 +1,123 @@
+@import '../variables';
+
+/*********/
+/* Color */
+/*********/
+
+// text
+.text-base {
+  color: $--color-text-primary !important;
+}
+.text-white {
+  color: $--color-white !important;
+}
+.text-light {
+  color: $--color-text-placeholder !important;
+}
+.text-dark {
+  color: $--color-dark !important;
+}
+.text-black {
+  color: $--color-black !important;
+}
+.text-primary {
+  color: $--color-primary !important;
+}
+.text-success {
+  color: mix($--color-black, $--color-success, 25%) !important;
+}
+.text-warning {
+  color: mix($--color-black, $--color-warning, 25%) !important;
+}
+.text-danger {
+  color: $--color-danger !important;
+}
+.text-info {
+  color: $--color-info !important;
+}
+
+// background
+.bg-transparent {
+  background-color: transparent !important;
+}
+.bg-base {
+  background-color: $--background-color-base !important;
+}
+.bg-white {
+  background-color: $--color-white !important;
+}
+.bg-light {
+  background-color: $--color-light !important;
+}
+.bg-dark {
+  background-color: $--color-dark !important;
+}
+.bg-black {
+  background-color: $--color-black !important;
+}
+.bg-primary {
+  background-color: $--color-primary !important;
+}
+.bg-primary-light-1 {
+  background-color: $--color-primary-light-1 !important;
+}
+.bg-primary-light-2 {
+  background-color: $--color-primary-light-2 !important;
+}
+.bg-primary-light-3 {
+  background-color: $--color-primary-light-3 !important;
+}
+.bg-primary-light-4 {
+  background-color: $--color-primary-light-4 !important;
+}
+.bg-primary-light-5 {
+  background-color: $--color-primary-light-5 !important;
+}
+.bg-primary-light-6 {
+  background-color: $--color-primary-light-6 !important;
+}
+.bg-primary-light-7 {
+  background-color: $--color-primary-light-7 !important;
+}
+.bg-primary-light-8 {
+  background-color: $--color-primary-light-8 !important;
+}
+.bg-primary-light-9 {
+  background-color: $--color-primary-light-9 !important;
+}
+.bg-success {
+  background-color: $--color-success !important;
+}
+.bg-success-light {
+  background-color: $--color-success-light !important;
+}
+.bg-success-lighter {
+  background-color: $--color-success-lighter !important;
+}
+.bg-warning {
+  background-color: $--color-warning !important;
+}
+.bg-warning-light {
+  background-color: $--color-warning-light !important;
+}
+.bg-warning-lighter {
+  background-color: $--color-warning-lighter !important;
+}
+.bg-danger {
+  background-color: $--color-danger !important;
+}
+.bg-danger-light {
+  background-color: $--color-danger-light !important;
+}
+.bg-danger-lighter {
+  background-color: $--color-danger-lighter !important;
+}
+.bg-info {
+  background-color: $--color-info !important;
+}
+.bg-info-light {
+  background-color: $--color-info-light !important;
+}
+.bg-info-lighter {
+  background-color: $--color-info-lighter !important;
+}

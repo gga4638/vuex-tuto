@@ -1,0 +1,34 @@
+@import '../variables';
+
+/**********/
+/* Shadow */
+/**********/
+
+.shadow-0 {
+  box-shadow: unset;
+}
+.shadow {
+  box-shadow: $--box-shadow-base;
+}
+.shadow-dark {
+  box-shadow: $--box-shadow-dark;
+}
+.shadow-light {
+  box-shadow: $--box-shadow-light;
+}
+
+.shadow-primary {
+  box-shadow: 10px 5px 50px mix($--color-white, $--color-primary, 30%) !important;
+}
+.shadow-success {
+  box-shadow: 10px 5px 50px mix($--color-white, $--color-success, 30%) !important;
+}
+.shadow-warning {
+  box-shadow: 10px 5px 50px mix($--color-white, $--color-warning, 30%) !important;
+}
+.shadow-danger {
+  box-shadow: 10px 5px 50px mix($--color-white, $--color-danger, 30%) !important;
+}
+.shadow-info {
+  box-shadow: 10px 5px 50px mix($--color-white, $--color-info, 30%) !important;
+}
