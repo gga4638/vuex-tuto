@@ -57,6 +57,11 @@ export default {
       age: 0,
    }
   },
+  created() {
+    this.$store.subscribe((mutation, state) => {
+      window.localStorage.setItem(STORAGE_KEY, JSON.stringify(state.todo.todos))
+    })
+  },
   computed: {
     ...mapState({
       todos: 'todo/todos'

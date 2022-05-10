@@ -1,5 +1,3 @@
-import Vuex from 'vuex';
-
 export const STORAGE_KEY = 'todos-vuejs'
 
 const state  = () => ({
@@ -52,7 +50,7 @@ const mutations = {
   },
 }
 
-
+/* todo: store js에서 plugins 어떻게 써야될지 모르겠음 */
 
 export default {
   namespaced: true,
