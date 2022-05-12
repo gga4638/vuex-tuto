@@ -6,9 +6,8 @@ const state  = () => ({
 
 const getters = {
   getTodos: (state) => {
-  return state.todo
-}
-
+    return state.todo
+  }
 }
 
 const actions = {

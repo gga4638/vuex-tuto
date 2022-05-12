@@ -11,6 +11,9 @@
       <li>
         <NuxtLink to="/todomvc">TodoMVC</NuxtLink>
       </li>
+      <li>
+        <NuxtLink to="/flux-chat">FluxChat</NuxtLink>
+      </li>
     </ul>
   </div>
 </template>
