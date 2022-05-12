@@ -9,32 +9,10 @@
       <ChatThreadItem
         v-for="thread in threads"
         :key="thread.id"
+        :thread="thread"
         :active="thread.id === currentThread.id"
         @switch-thread="switchThread"
-      >
-      </ChatThreadItem>
-
-      <li class="border-warning border p-3">
-        <div class="d-flex justify-content-between text-warning mb-2 fs-5">
-          <span class="fw-bolder">Jin and Bill</span>
-          <div>오전 10:10:46</div>
-        </div>
-        <div>Sounds good. Will they be serving dessert?</div>
-      </li>
-      <li class="border-warning border p-3">
-        <div class="d-flex justify-content-between text-warning mb-2 fs-5">
-          <span class="fw-bolder">Dave and Bill</span>
-          <div>오전 10:40:06</div>
-        </div>
-        <div>Totally! Meet you at the hotel bar.</div>
-      </li>
-      <li class="border-warning border p-3">
-        <div class="d-flex justify-content-between text-warning mb-2 fs-5">
-          <span class="fw-bolder">Functional Heads</span>
-          <div>오전 05:55:55</div>
-        </div>
-        <div>At ForwardJS? Yeah, of course. See you there!</div>
-      </li>
+      />
     </ul>
   </div>
 </template>
@@ -56,8 +34,7 @@ export default {
   },
   methods: {
     switchThread(threadID) {
-      console.log("실행")
-      this.$store.dispatch('chat/switchThread')
+      this.$store.dispatch('chat/switchThread', threadID)
     }
   }
 }
@@ -77,13 +54,13 @@ ul {
   &.thread-list {
     li {
       &:hover {
-        background-color: #efefff;
+        background-color: #f8f8ff;
         cursor: pointer;
       }
 
       &.active {
         background-color: #efefff;
-        cursor: none;
+        cursor: default;
       }
     }
   }

@@ -2,6 +2,7 @@ const data = require('./mock-data')
 const LATENCY = 16
 
 export function getAllMessages (cb) {
+  console.log("init")
   setTimeout(() => {
     cb(data)
   }, LATENCY)
@@ -20,6 +21,7 @@ export function createMessage ({ text, thread }, cb) {
     threadName: thread.name,
     authorName: 'SiraSoup', // 내 닉네임
   }
+
   setTimeout(() => {
     cb(message)
   }, LATENCY)

@@ -1,4 +1,5 @@
 import * as api from '@/pages/flux-chat/api/index'
+import Vue from "vue";
 
 export const state = () => ({
   currentThreadId: null,
@@ -8,7 +9,7 @@ export const state = () => ({
       id,
       name,
       messages: [...ids],
-      lastMessage: { timestamp, text }
+      lastMessage: { threadID, timestamp, text , isRead}
     }
     */
   },
@@ -31,23 +32,25 @@ export const state = () => ({
 export const getters = {
   threads: (state) => state.threads,
   currentThread: (state) => {
-    console.log("현재 Thread: ", state.currentThreadId)
-    return state.currentThreadId
+    return state.currentThreadId ? state.threads[state.currentThreadId] : {}
   },
-  currentMessages: (state) => {
-
+  currentMessages: (state, getters) => {
+    const thread = getters.currentThread
+    return thread.messages ? thread.messages.map(id => state.messages[id]) : []
   },
-  unreadCount: () => {
-
+  unreadCount: (state) => {
+    // todo: js 문법 공부하기, 객체 조건에 맞는 객체만 반환시켜야됨
+    return 1
   },
-  sortedMessage: () => {
-
+  sortedMessage: (state, getters) => {
+    const messages = getters.currentMessages
+    return messages.slice().sort((a, b) => a.timestamp - b.timestamp)
   }
 }
 
 export const mutations = {
   receiveAll(state, messages) {
-    let latesMessage
+    let lastMessage
     messages.forEach(message => {
       // create new thread if the thread doesn't exist
       if(!state.threads[message.threadID]) {
@@ -55,16 +58,17 @@ export const mutations = {
       }
 
       // mark the latest message
-      if(!latesMessage || message.timestamp > latesMessage.timestamp) {
-        latesMessage = message
+      if(!lastMessage || message.timestamp > lastMessage.timestamp) {
+        lastMessage = message
       }
 
       // add message
       addMessage(state, message)
-
     })
 
-    setCurrentThread(state, latesMessage.threadID)
+    console.log("lastMessage.threadID: ", lastMessage.threadID)
+    console.log("lastMessage: ", lastMessage)
+    setCurrentThread(state, lastMessage.threadID)
 
   },
   receiveMessage(state, message) {
@@ -86,19 +90,32 @@ export const actions = {
       commit('receiveMessage', message)
     })
   },
-  switchThread({ commit }, payload) {
-    console.log("switchThread payload: ", payload)
-    commit('switchTread', payload)
+  switchThread({ commit }, threadID) {
+    commit('switchThread', threadID)
   }
 }
 
 function addMessage(state, message) {
+  message.isRead = message.threadID === state.currentThreadId
 
+  const thread = state.threads[message.threadID]
+
+  // 기존 메세지가 아닌 경우 추가
+  if(!thread.messages.some(id => id === message.id)) {
+    thread.messages.push(message.id)
+    thread.lastMessage = message
+  }
+
+  Vue.set(state.messages, message.id, message)
 }
 
-/* 최초 init 필요함 api/mock-data 가져오기 */
 function createThread(state, id, name) {
-
+  Vue.set(state.threads, id, {
+    id,
+    name,
+    messages: [],
+    lastMessage: null
+  })
 }
 
 function setCurrentThread(state, id) {
