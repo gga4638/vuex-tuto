@@ -40,6 +40,7 @@ export const getters = {
   },
   unreadCount: (state) => {
     // todo: js 문법 공부하기, 객체 조건에 맞는 객체만 반환시켜야됨
+    // todo: timestpmp filter이용해서 시간 출력하기
     return 1
   },
   sortedMessage: (state, getters) => {

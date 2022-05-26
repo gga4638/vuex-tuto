@@ -3,7 +3,7 @@
     <p class="fw-bolder fs-2 mt-0">
       {{ thread.name }}
     </p>
-    <ul class="border-warning border p-2 overflow-auto">
+    <ul class="border-warning border p-2 overflow-auto" ref="messages">
       <ChatMessageItem
         v-for="message in messages"
         :key="message.id"
@@ -29,6 +29,14 @@ export default {
       thread: 'chat/currentThread',
       messages: 'chat/sortedMessage'
     })
+  },
+  watch: {
+    messages() {
+      this.$nextTick(() => {
+        let messages = this.$refs.messages;
+        messages.scrollTo({ top: messages.scrollHeight, behavior: 'smooth'})
+      })
+    }
   },
   methods: {
     sendMessage(e) {
