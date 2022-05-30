@@ -14,6 +14,9 @@
       <li>
         <NuxtLink to="/flux-chat">FluxChat</NuxtLink>
       </li>
+      <li>
+        <NuxtLink to="/input-ime">IME Input</NuxtLink>
+      </li>
     </ul>
   </div>
 </template>
