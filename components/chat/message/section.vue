@@ -3,13 +3,14 @@
     <p class="fw-bolder fs-2 mt-0">
       {{ thread.name }}
     </p>
-    <ul class="border-warning border p-2 overflow-auto" ref="messages">
+    <ul class="border-warning border p-2 overflow-auto" ref="messageBox">
       <ChatMessageItem
         v-for="message in messages"
         :key="message.id"
         :message="message"
       />
     </ul>
+    작성자: <input v-model="authorName" class="mb-1"/>
     <textarea name="" id="" cols="110" rows="3" @keyup.enter="sendMessage"></textarea>
     <div></div>
   </div>
@@ -21,7 +22,7 @@ import {mapGetters} from "vuex";
 export default {
   data() {
     return {
-
+      authorName: '',
     }
   },
   computed: {
@@ -33,14 +34,14 @@ export default {
   watch: {
     messages() {
       this.$nextTick(() => {
-        let messages = this.$refs.messages;
-        messages.scrollTo({ top: messages.scrollHeight, behavior: 'smooth'})
+        let messageBox = this.$refs.messageBox;
+        messageBox.scrollTo({ top: messageBox.scrollHeight, behavior: 'smooth'})
       })
     }
   },
   methods: {
     sendMessage(e) {
-      this.$store.dispatch('chat/sendMessage', { text: e.target.value, thread: this.thread })
+      this.$store.dispatch('chat/sendMessage', { text: e.target.value, authorName: this.authorName, thread: this.thread })
       e.target.value = ''
     }
   },

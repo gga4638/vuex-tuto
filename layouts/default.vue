@@ -1,6 +1,6 @@
 <template>
   <div>
     <NuxtLink to="/">< HOME</NuxtLink>
-    <Nuxt />
+    <Nuxt class="mt-4"/>
   </div>
 </template>

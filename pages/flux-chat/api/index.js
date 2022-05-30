@@ -8,10 +8,9 @@ export function getAllMessages (cb) {
   }, LATENCY)
 }
 
-export function createMessage ({ text, thread }, cb) {
+export function createMessage ({ text, authorName, thread }, cb) {
   const timestamp = Date.now()
   const id = 'm_' + timestamp
-
   // 메세지 가공해서 콜백함수에 넘김
   const message = {
     id,
@@ -19,7 +18,7 @@ export function createMessage ({ text, thread }, cb) {
     timestamp,
     threadID: thread.id,
     threadName: thread.name,
-    authorName: 'SiraSoup', // 내 닉네임
+    authorName: authorName, // 내 닉네임
   }
 
   setTimeout(() => {

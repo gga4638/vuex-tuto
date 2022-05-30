@@ -38,10 +38,10 @@ export const getters = {
     const thread = getters.currentThread
     return thread.messages ? thread.messages.map(id => state.messages[id]) : []
   },
-  unreadCount: (state) => {
-    // todo: js 문법 공부하기, 객체 조건에 맞는 객체만 반환시켜야됨
-    // todo: timestpmp filter이용해서 시간 출력하기
-    return 1
+  unreadCount: ({ threads }) => {
+    return Object.keys(threads).reduce((count, id) => {
+      return threads[id].lastMessage.isRead ? count : count + 1
+    }, 0)
   },
   sortedMessage: (state, getters) => {
     const messages = getters.currentMessages
@@ -67,16 +67,14 @@ export const mutations = {
       addMessage(state, message)
     })
 
-    console.log("lastMessage.threadID: ", lastMessage.threadID)
-    console.log("lastMessage: ", lastMessage)
     setCurrentThread(state, lastMessage.threadID)
-
   },
   receiveMessage(state, message) {
+
     addMessage(state, message)
   },
   switchThread(state, threadID) {
-    state.currentThreadId = threadID
+    setCurrentThread(state, threadID)
   }
 }
 

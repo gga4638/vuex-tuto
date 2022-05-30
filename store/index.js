@@ -9,6 +9,7 @@ import {currency} from "@/plugins/currency";
 import practiceTodo from "./modules/todo";
 
 Vue.filter('currency', currency)
+Vue.filter('time', time)
 
 Vue.use(Vuex);
 
@@ -21,3 +22,7 @@ export const store = new Vuex.Store({
     practiceTodo,
   },
 })
+
+function time(timestamp) {
+  return new Date(timestamp).toLocaleTimeString()
+}

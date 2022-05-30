@@ -1,11 +1,11 @@
 <template>
-  <div class="mr-3" style="width: 250px;">
-    <div class="d-inline-block" style="height: 31px;">
+  <div class="mr-3">
+    <div class="d-inline-block m-0" style="height: 40px;">
       <span v-show="unreadCount">
         Unread threads: {{ unreadCount}}
       </span>
     </div>
-    <ul class="thread-list border-warning border">
+    <ul class="thread-list border-warning border m-0">
       <ChatThreadItem
         v-for="thread in threads"
         :key="thread.id"
@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import {mapGetters, mapState} from "vuex";
+import { mapGetters } from "vuex";
 
 export default {
   data() {
@@ -35,7 +35,7 @@ export default {
   methods: {
     switchThread(threadID) {
       this.$store.dispatch('chat/switchThread', threadID)
-    }
+    },
   }
 }
 </script>

@@ -6,7 +6,7 @@
   >
     <div class="d-flex justify-content-between text-warning mb-2 fs-5">
       <span class="fw-bolder">{{ thread.name || "name" }}</span>
-      <div>{{ thread.lastMessage.timestamp || "timestamp"}}</div>
+      <div>{{ thread.lastMessage.timestamp | time}}</div>
     </div>
     <div>{{ thread.lastMessage.text || "text"}}</div>
   </li>
