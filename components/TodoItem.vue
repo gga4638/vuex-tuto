@@ -42,7 +42,7 @@ export default {
     },
     removeTodo(todo) {
       this.$store.dispatch('todo/removeTodo', todo)
-    }
+    },
   }
 }
 </script>

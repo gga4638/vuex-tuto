@@ -8,11 +8,16 @@
         <input v-model="inputText" />
         <span>{{ inputText }}</span>
       </div>
-      <div>
+      <div class="mb-3">
         <span>@input: </span>
         <input @input="inputMethod" />
         <span>{{ inputValue }}</span>
       </div>
+    </div>
+    <div class="mb-3">
+      <span>v-model.number: </span>
+      <input v-model.number="inputNumber" />
+      <span>{{ inputNumber }}</span>
     </div>
   </div>
 </template>
@@ -23,6 +28,7 @@ export default {
     return {
       inputText: '',
       inputValue: '',
+      inputNumber: '',
     }
   },
   computed: {

@@ -36,6 +36,14 @@ export default {
     ],
   },
 
+  // winow.localStorage 쓰기위해서 mode: 'spa'를 사용함
+  // 하지만 이 방법으로 로컬스토리지를 사용하는건 아닌거 같음
+  // 의문점 해결: 완전히 이해 못함ㅋㅋㅋㅋㅋㅋ
+  // 한 페이지를 나타내는 .vue 에서는 csr이기 때문에 localStorage 접근 가능
+  // js에서 처음 로딩시 ssr로 작동하기 때문
+  // 참조 https://nuxtjs.org/docs/concepts/server-side-rendering/
+  //
+
   mode: 'spa',
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -50,34 +58,8 @@ export default {
   buildModules: [
   ],
 
-  // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-    '@nuxtjs/axios',
-  ],
-
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {
-    proxy: true,
-    // debug : true,
-    prefix: process.env.DOMAIN + '/proxy',
-  },
-
-  /**********/
-  /* router */
-  /**********/
-  router: {
-    middleware: [
-    ],
-  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    plugins: [
-      new webpack.ProvidePlugin({
-        $              : "jquery",
-        jQuery         : "jquery",
-        "window.jQuery": "jquery"
-      })
-    ],
   },
 }

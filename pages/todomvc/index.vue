@@ -1,5 +1,6 @@
 <template>
   <div style="text-align: center;background-color: beige">
+    <button @click="test">로컬 스토리지</button>
     <h1 class="display-1" style="color: brown">todos</h1>
     <div style="display: flex;justify-content: center">
       <div class="w-25">
@@ -89,6 +90,10 @@ export default {
     },
     clearCompleted() {
       return this.$store.dispatch('todo/clearCompleted')
+    },
+    test() {
+      const STORAGE_KEY = 'todos-vuejs'
+      console.log("localStorage: ", localStorage.getItem(STORAGE_KEY))
     }
   },
 }
