@@ -2,7 +2,7 @@
   <div class="mr-3">
     <div class="d-inline-block m-0" style="height: 40px;">
       <span v-show="unreadCount">
-        Unread threads: {{ unreadCount}}
+        Unread threads: {{ unreadCount }}
       </span>
     </div>
     <ul class="thread-list border-warning border m-0">

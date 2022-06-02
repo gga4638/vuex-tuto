@@ -17,6 +17,9 @@
       <li>
         <NuxtLink to="/input-ime">IME Input</NuxtLink>
       </li>
+      <li>
+        <NuxtLink to="/axios">axios</NuxtLink>
+      </li>
     </ul>
   </div>
 </template>
