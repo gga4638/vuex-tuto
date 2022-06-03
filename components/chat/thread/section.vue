@@ -1,5 +1,5 @@
 <template>
-  <div class="mr-3">
+  <div class="mr-3 w-25">
     <div class="d-inline-block m-0" style="height: 40px;">
       <span v-show="unreadCount">
         Unread threads: {{ unreadCount }}
