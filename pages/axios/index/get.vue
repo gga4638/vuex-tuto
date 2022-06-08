@@ -2,6 +2,7 @@
   <div>
     <h2>API GET</h2>
     <button @click="addUser(newUser)">회원 추가</button>
+    <button @click="checkUser">회원 콘솔 확인</button>
     <div
       v-for="user in users"
       :key="user.id"
@@ -56,7 +57,8 @@ export default {
     }),
     users() {
       if(this.getUsers.length === 0) {
-        this.$store.dispatch('user/initUser')
+        this.$store.dispatch('user/initUserAwait')
+        // this.$store.dispatch('user/initUserPromise')
       }
       return this.getUsers
     }
@@ -64,7 +66,10 @@ export default {
   methods: {
     addUser(user) {
       this.$store.dispatch('user/addUser', user)
-    }
+    },
+    checkUser() {
+      console.log(this.getUsers)
+    },
   }
 }
 </script>

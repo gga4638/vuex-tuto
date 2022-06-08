@@ -40,11 +40,11 @@ export const mutations = {
   },
   addUser(state, user) {
     state.user.push(user)
-  }
+  },
 }
 
 export const actions = {
-  initUser(store) {
+  initUserPromise(store) {
     console.log("user init")
     return new Promise((resolve, reject) => {
       this.$axios
@@ -60,5 +60,14 @@ export const actions = {
   },
   addUser({ commit }, user) {
     commit('addUser', user)
+  },
+  async initUserAwait({ commit }) {
+    console.log("init user async & await")
+    try {
+      const data = await this.$axios.$get(`https://jsonplaceholder.typicode.com/users`)
+      commit('setUser', Object.values(data))
+    } catch(err) {
+      console.log("error initUserAwait ")
+    }
   }
 }

@@ -20,6 +20,9 @@
       <li>
         <NuxtLink to="/axios">axios</NuxtLink>
       </li>
+      <li>
+        <NuxtLink to="/tuto-js">javascript</NuxtLink>
+      </li>
     </ul>
   </div>
 </template>

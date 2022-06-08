@@ -4,6 +4,7 @@
     <button @click="getData">실행</button>
     <button @click="goFail">실패</button>
     <button @click="goFailCatch">실패Catch</button>
+    <p class="fs-3">{{ message }}</p>
   </div>
 </template>
 
@@ -11,7 +12,7 @@
 export default {
   data() {
     return {
-
+      message: '',
     }
   },
   methods: {
@@ -22,15 +23,15 @@ export default {
         }, 2000)
       })
       .then((result) => {
-        console.log(result)
+        this.message = result
         return result + 10;
       })
       .then((result) => {
-        console.log(result)
+        this.message = result
         return result + 20;
       })
       .then((result) => {
-        console.log(result)
+        this.message = result
         return result + 30;
       })
     },
@@ -39,9 +40,9 @@ export default {
         reject('failed')
       })
       .then(() => {
-        console.log('성공')
+        this.message = '성공'
       }, (err) => {
-        console.log("error message: ", err)
+        this.message = "error message: " + err
       })
     },
     goFailCatch() {
@@ -50,9 +51,13 @@ export default {
       })
       .then()
       .catch((err) => {
-        console.log("failed catch: ", err)
+        this.message = "failed catch: " + err
       })
+    },
+    asyncAwait() {
+
     }
+
   }
 }
 
